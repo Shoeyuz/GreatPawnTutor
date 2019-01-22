@@ -1,0 +1,113 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+public class PlayerStats {
+
+	 private static PrintWriter fileOut;
+	 private static BufferedReader fileIn;
+	 String filePath = "data//testing.txt";
+	 //stores the user's stats
+	  ArrayList<Integer> stats = new ArrayList<Integer>();
+		
+	  //adds 6 objects as there are 6 stats and adds them to the stats list
+		public PlayerStats() {
+			
+			for (int i = 0; i < 6; i++) {
+				
+				stats.add(0);
+				
+			}
+				
+		}
+		
+		//reads the stats of the user and modifies one then writes it back into the data file
+		public void rewrite (int index) {
+			
+			try {
+				
+				fileIn = new BufferedReader(new FileReader(filePath));
+				
+				String input;
+				//reads the stats and adds them to the stats array
+				for (int i = 0; i < stats.size(); i++) {
+				
+				if ((input = fileIn.readLine()) != null)
+				{
+					stats.set(i, Integer.parseInt(input));
+					
+				}
+				
+				}
+				
+				 fileIn.close();
+				
+			}catch (IOException e) {
+				
+				System.out.println("Sorry there was an error reading");
+				
+			}
+			//modifies the chosen stat
+			stats.set(index, stats.get(index) + 1);
+			
+			try {
+				
+				fileOut = new PrintWriter(new BufferedWriter(new FileWriter(filePath)));
+				//writes the stats back into the file
+				for (int i = 0; i < stats.size(); i++) {
+				fileOut.println(stats.get(i));
+				}
+				fileOut.close();
+				
+				}catch (IOException e){
+					
+					System.out.println("Sorry there was an error writing");
+					
+				}
+		
+			System.out.println("wins: " + stats.get(0));
+			System.out.println("losses: " + stats.get(1));
+			System.out.println("ties: " + stats.get(2));
+			System.out.println("moves: " + stats.get(3));
+			System.out.println("pieces won: " + stats.get(4));
+			System.out.println("pieces lost: " + stats.get(5));
+			
+			
+		}
+		
+		//reads the file and returns it
+		public ArrayList<Integer> read () {
+			
+			try {
+				
+				fileIn = new BufferedReader(new FileReader(filePath));
+				
+				String input;
+				//reads the file into the stats array
+				for (int i = 0; i < stats.size(); i++) {
+				
+				if ((input = fileIn.readLine()) != null)
+				{
+					stats.set(i, Integer.parseInt(input));
+					
+				}
+				
+				}
+				
+				 fileIn.close();
+				
+			}catch (IOException e) {
+				
+				System.out.println("Sorry there was an error reading");
+				
+			}
+			
+			return stats;			
+			
+		}
+		
+	}
