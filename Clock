@@ -1,0 +1,45 @@
+public class Clock extends Thread {
+	//stores how much time each player has
+	int whiteTime;
+	int blackTime;
+	
+	//constructor sets the time selected for the players
+	public Clock (int time) {
+
+		this.whiteTime = time;
+		this.blackTime = time;
+		
+			}
+	
+	public void run() {
+		
+		//waits 1 second before counting down the timer for the player that is making a move
+		while(whiteTime != 0 && blackTime != 0) {
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			if (Main.turn) {
+				
+				whiteTime --;
+				
+			}else {
+				
+				blackTime --;
+				
+			}
+			
+			System.out.println(whiteTime + "    " + blackTime);
+			
+		}
+		
+		
+	}
+	
+	
+}
+
