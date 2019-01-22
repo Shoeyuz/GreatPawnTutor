@@ -1,0 +1,114 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root
+{
+	
+	
+	 -fx-background-image: url("file:PicLib/backimg.gif");
+	 -fx-background-size: 1200px; 
+	 /*scales the background image to fit the whole scene */
+	
+}
+
+.mainmenu{
+	
+	-fx-font-size: 50;
+	-fx-text-fill: rgb(255, 255, 255);
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	-fx-cursor: hand;
+	-fx-background-color: transparent;
+	
+	
+}
+
+.back{
+	
+	-fx-font-size: 35;
+	-fx-text-fill: orange;
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	-fx-cursor: hand;
+	-fx-background-color: transparent;
+}
+
+.back:hover{
+	 -fx-background-color:yellow  ;
+}
+
+.back:pressed{
+	-fx-background-color: red ;
+}
+.mainmenu:hover 
+{
+  -fx-background-color: orange;
+} 
+
+.mainmenu:pressed
+{
+  -fx-background-color: black;
+}
+
+
+.playmenu{
+	
+	-fx-font-size: 50;
+	-fx-text-fill: rgb(255, 255, 255);
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	-fx-cursor: hand;
+	-fx-background-color: transparent;
+	
+	
+}
+
+.playmenu:hover 
+{
+  -fx-background-color: orange;
+} 
+
+.playmenu:pressed
+{
+  -fx-background-color: black;
+}
+
+.splay
+{
+	-fx-cursor: hand;
+}
+
+.ComboBox .menu-item:focused { -fx-background-color: orange; }
+.ComboBox .context-menu { -fx-background-color: black; }
+.ComboBox .menu-item > .label { -fx-text-fill: white; }
+.ComboBox .menu-item:focused > .label { -fx-text-fill: black; }
+.ComboBox
+{
+	-fx-font-size: 20;
+	-fx-text-fill: rgb(255, 255, 255);
+
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	-fx-cursor: hand;
+	-fx-background-color: black;
+  	-fx-mark-color: orange;
+}
+
+.label
+{
+	-fx-font-size: 20;
+	-fx-text-fill: rgb(255, 255, 255);
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	  	-fx-mark-color: orange;
+	
+	
+}
+
+.boardlabel
+{
+	-fx-font-size: 40;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-font-family: fantasy;
+	  -fx-mark-color: orange;
+}
