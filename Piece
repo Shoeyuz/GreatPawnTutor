@@ -1,0 +1,119 @@
+public class Piece {
+	//stores the colour of the piece
+	private boolean isWhite;
+	//stores what type of piece the object is
+	private String pieceType;
+	//stores the row and column of the piece
+	private int row;
+	private int column;
+	//stores the index of the piece within certain arrays
+	private int index;
+	//stores whether or not the piece has been moved
+	private boolean isMoved = false;
+	
+	
+	public Piece (boolean w, String p, int r, int c) {
+		
+		isWhite = w;
+		pieceType = p;
+		row = r;
+		column = c;
+		
+	}
+	
+	public Piece (boolean w, String p, int r, int c, int i) {
+		
+		isWhite = w;
+		pieceType = p;
+		row = r;
+		column = c;
+		index = i;		
+		
+	}
+	
+	public Piece (boolean w, String p, int r, int c, boolean m) {
+		
+		isWhite = w;
+		pieceType = p;
+		row = r;
+		column = c;
+		isMoved = m;
+		
+	}
+	//outputs the pieces colour
+	public boolean getColour() {
+		
+		return isWhite;
+		
+	}
+	//outputs the the type of piece
+	public String getPieceType () {
+		
+		return pieceType;
+		
+	}
+	//outputs the row of the piece on the board
+	public int getRow() {
+		
+		return row;
+		
+	}
+	//outputs the column of the piece on the board
+	public int getColumn() {
+		
+		return column;
+		
+	}
+	//outputs the index of the piece in arrays
+	public int getIndex() {
+		
+		return index;
+		
+	}
+	//outputs whether or not the piece has moved
+	public boolean getIsMoved() {
+		
+		return isMoved;
+		
+	}
+	//modifies the piece type
+	public void setPieceType (String p) {
+		
+		pieceType = p;
+		
+	}
+	//moves the piece to a different row
+	public void setRow(int r) {
+		
+		row = r;
+		
+	}
+	//moves the piece to a different column
+	public void setColumn(int c) {
+		
+		column = c;
+		
+	}
+	//records a piece as moved
+	public void setIsMoved(boolean b) {
+		
+		isMoved = b;
+		
+	}
+	//checks to see if two pieces are equal and returns a boolean
+	public boolean isEqual(Piece e) {
+		
+		if (this.getColour() == e.getColour() && this.getPieceType().equals(e.getPieceType()) && this.getRow() == e.getRow() && this.getColumn() == e.getColumn()) {
+			
+			return true;
+			
+		}else {
+			
+			return false;
+			
+		}
+		
+	}
+	
+}
+
