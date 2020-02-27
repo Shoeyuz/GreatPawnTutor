@@ -1,5 +1,6 @@
 # GreatPawnTutor
 ICS4U final project
+Created in collaboration with Jack Noseworthy
 
 
 Computer program meant to teach the basics of a chess to a total beginner
